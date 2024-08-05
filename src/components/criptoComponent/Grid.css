@@ -1,0 +1,57 @@
+.visorGrid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border:1px solid black;
+    flex-direction:column;
+    gap:10px;
+    width: 99%;
+    font-size: 1.2rem;
+}
+
+.column{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:45%;
+    position: fixed;
+    background-color: white;
+}
+
+.column span{
+    border:2px solid white;
+    width:49%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:45%;
+    margin-top: 2%;
+}
+
+.row span{
+    border:1px solid lightgray;
+    width:49%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    height:50px;
+    text-align: center;
+    color:white;
+    flex-direction: column;
+}
+
+.positive{
+    color:greenyellow;
+}
+.negative{
+    color:red;
+}

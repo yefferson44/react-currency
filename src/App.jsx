@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react'
+import { CriptoList } from './components/criptoComponent/CriptoList'
+import './App.css'
+
+
 import axios from 'axios'
 
 function App() {
   const [criptos, setCriptos] = useState()
 
   const API_ASSETS = import.meta.env.VITE_API_URL 
-  
 
   useEffect(() => {
     axios.get(`${API_ASSETS}/assets`)
@@ -16,17 +19,6 @@ function App() {
   },[])
 
 
-  const listCriptos = () => {
-    return criptos.map(({id,name,priceUsd}) => (
-      <li key={id}>
-        <br /><br />
-        <strong>Nombre:</strong> {name} <br />
-        <strong>Precio:</strong> {Number(priceUsd).toFixed(2)}
-        <br /><br />
-      </li>
-    ))
-  }
-
 
   if(!criptos){
     return <div>Cargando...</div>
@@ -35,9 +27,7 @@ function App() {
   return (
     <>
       <h1>Lista de Criptomonedas</h1>
-      <ul>
-        {listCriptos()}
-      </ul>
+      <CriptoList criptoApi={criptos} />
     </>
   )
 
