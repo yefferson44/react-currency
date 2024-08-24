@@ -1,0 +1,8 @@
+small{
+    color:white;
+}
+
+.infoDataUser{
+    display: flex;
+    flex-direction: column;
+}

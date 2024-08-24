@@ -1,7 +1,15 @@
+*{
+    font-family: tahoma;
+}
+
 body{
     background-color: #111024;
 }
 
 h1{
+    color:white;
+}
+
+.carga{
     color:white;
 }

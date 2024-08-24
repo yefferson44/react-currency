@@ -1,36 +1,19 @@
-import { useEffect, useState } from 'react'
-import { CriptoList } from './components/criptoComponent/CriptoList'
-import './App.css'
+import { Menu } from "./components/menu/Menu"
+import { Outlet, Navigate } from "react-router-dom"
 
 
-import axios from 'axios'
+function App(){
 
-function App() {
-  const [criptos, setCriptos] = useState()
+    if(!localStorage.getItem('tokenEdMarket')){
+        return <Navigate to="/login" />
+    }
 
-  const API_ASSETS = import.meta.env.VITE_API_URL 
-
-  useEffect(() => {
-    axios.get(`${API_ASSETS}/assets`)
-    .then(data => {
-      setCriptos(data.data.data)
-    })
-    .catch(() => console.error('La peticion fallo.'))
-  },[])
-
-
-
-  if(!criptos){
-    return <div>Cargando...</div>
-  }
-
-  return (
-    <>
-      <h1>Lista de Criptomonedas</h1>
-      <CriptoList criptoApi={criptos} />
-    </>
-  )
-
+    return(
+        <> 
+            <Menu />
+            <Outlet></Outlet>
+        </>
+    )
 }
 
 export default App

@@ -1,0 +1,25 @@
+.visorCripto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100;
+    flex-direction: column;
+}
+
+h3{
+    color:white;
+}
+
+.tableInfo{
+    border:1px solid white;
+    padding:20px 20px;
+    margin-top:5%;
+}
+
+.visorHistory{
+    display: flex;
+    justify-content:space-around;
+    border:1px solid yellow;
+    padding: 8px;
+    margin-bottom:6px;
+}
